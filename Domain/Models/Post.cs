@@ -8,4 +8,13 @@ public class Post
     public string Title { get; }
     public string Content { get; }
     public int Upvotes { get; set; }
+
+    public Post(SubForum parent, User owner, string title, string content)
+    {
+        Parent = parent;
+        Owner = owner;
+        Title = title;
+        Content = content;
+        Upvotes = 0;
+    }
 }
