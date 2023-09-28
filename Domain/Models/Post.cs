@@ -2,6 +2,7 @@ namespace Domain.Models;
 
 public class Post
 {
+    //Lyubo
     public int Id { get; set; }
     public SubForum Parent { get; }
     public User Owner { get; }

@@ -2,6 +2,7 @@ namespace Domain.Models;
 
 public class SubForum
 {
+    //Lyubo
     public int id { get; set; }
     public string Title { get; set; }
     public User Owner { get;}
