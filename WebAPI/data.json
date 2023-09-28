@@ -1,0 +1,14 @@
+{
+  "Users": [
+    {
+      "Id": 1,
+      "UserName": "username",
+      "Password": "password123",
+      "Email": "email@domain.com",
+      "CakeDay": "2023-09-28T00:00:00+02:00"
+    }
+  ],
+  "SubForums": [],
+  "Posts": [],
+  "Comments": []
+}

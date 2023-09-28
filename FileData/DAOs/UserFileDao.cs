@@ -29,7 +29,14 @@ public class UserFileDao : IUserDao
         return Task.FromResult(user);
     }
 
-    public Task<User?> GetUsernameByAsync(string userName)
+    public Task<User?> GetByIdAsync(int id)
+    {
+        User? existing = context.Users.FirstOrDefault(u => u.Id == id);
+        return Task.FromResult(existing);
+    }
+
+
+    public Task<User?> GetByUsernameAsync(string userName)
     {
         User? existing = context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
         return Task.FromResult(existing);

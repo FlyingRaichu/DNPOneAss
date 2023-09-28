@@ -17,7 +17,7 @@ public class UserLogic : IUserLogic
     public async Task<User> CreateAsync(UserCreationDto dto)
     {
         //checks if the username exists (it's a unique value)
-        User? existing = await userDao.GetUsernameByAsync(dto.UserName);
+        User? existing = await userDao.GetByUsernameAsync(dto.UserName);
         if (existing != null)
             throw new Exception("Username already taken!");
 
