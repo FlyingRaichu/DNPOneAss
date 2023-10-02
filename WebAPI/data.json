@@ -5,7 +5,14 @@
       "UserName": "username",
       "Password": "password123",
       "Email": "email@domain.com",
-      "CakeDay": "2023-09-28T00:00:00+02:00"
+      "CakeDay": "2023-10-02T00:00:00+02:00"
+    },
+    {
+      "Id": 2,
+      "UserName": "Gosho",
+      "Password": "Granatata",
+      "Email": "GoshoGranatata@gmail.com",
+      "CakeDay": "2023-10-02T00:00:00+02:00"
     }
   ],
   "SubForums": [],
