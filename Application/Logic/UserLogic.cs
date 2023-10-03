@@ -2,6 +2,7 @@
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
+using FileData.DAOs;
 
 namespace Application.Logic;
 
@@ -26,6 +27,11 @@ public class UserLogic : IUserLogic
         User created = await userDao.CreateAsync(userToCreate);
 
         return created;
+    }
+
+    public Task<IEnumerable<User>> GetAsync(SearchUserParametersDto searchParameter)
+    {
+        return userDao.GetAsync(searchParameter);
     }
 
     private void ValidateUser(UserCreationDto dto)
