@@ -1,6 +1,13 @@
 {
   "Users": [
     {
+      "Id": 1,
+      "UserName": "Dang",
+      "Password": "12345",
+      "Email": "email@domain.com",
+      "CakeDay": "2023-10-03T00:00:00+02:00"
+    },
+    {
       "Id": 2,
       "UserName": "Gosho",
       "Password": "Granatata",
@@ -8,11 +15,25 @@
       "CakeDay": "2023-10-03T00:00:00+02:00"
     },
     {
-      "Id": 1,
-      "UserName": "Dang",
-      "Password": "12345",
-      "Email": "email@domain.com",
+      "Id": 3,
+      "UserName": "GoshoGranatata",
+      "Password": "123123",
+      "Email": "Goshogranatata@gmail.com",
       "CakeDay": "2023-10-03T00:00:00+02:00"
+    }
+  ],
+  "SubForums": [
+    {
+      "Id": 1,
+      "Title": "Memes",
+      "Description": "Pretty cool memes.",
+      "Owner": {
+        "Id": 2,
+        "UserName": "Gosho",
+        "Password": "Granatata",
+        "Email": "GoshoGranatata@gmail.com",
+        "CakeDay": "2023-10-03T00:00:00+02:00"
+      }
     }
   ],
   "SubForums": [],
