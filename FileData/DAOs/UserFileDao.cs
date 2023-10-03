@@ -29,6 +29,23 @@ public class UserFileDao : IUserDao
         return Task.FromResult(user);
     }
 
+    public Task UpdateAsync(User user)
+    {
+        User? existing = context.Users.FirstOrDefault(u => u.Id == user.Id);
+        if (existing == null)
+        {
+            throw new Exception($"User with ID {user.Id} does not exist");
+        }
+
+        context.Users.Remove(existing);
+        context.Users.Add(user);
+        
+        context.SaveData();
+
+        return Task.CompletedTask;
+
+    }
+
     public Task<User?> GetByIdAsync(int id)
     {
         User? existing = context.Users.FirstOrDefault(u => u.Id == id);
@@ -53,4 +70,6 @@ public class UserFileDao : IUserDao
 
         return Task.FromResult(users);
     }
+    
+    
 }

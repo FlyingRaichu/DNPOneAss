@@ -34,6 +34,35 @@ public class UserLogic : IUserLogic
         return userDao.GetAsync(searchParameter);
     }
 
+    public async Task UpdateAsync(UserUpdateDto user)
+    {
+        User? existing = await userDao.GetByIdAsync(user.Id);
+        if (existing == null)
+        {
+            throw new Exception($"User with ID {user.Id} not found");
+        }
+
+        string userToBe = user.UserName ?? existing.UserName;
+        string password = user.Password ?? existing.Password;
+        string email = user.Email ?? existing.Email;
+
+        User updated = new(userToBe, password, email)
+        {
+            Id = existing.Id,
+        };
+        ValidateEdit(updated);
+
+        await userDao.UpdateAsync(updated);
+
+    }
+
+    private void ValidateEdit(User user)
+    {
+        if(string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Password)) 
+            throw new Exception("The user has invalid information (null)");
+        // other validation stuff
+    }
+
     private void ValidateUser(UserCreationDto dto)
     {
         string userName = dto.UserName;
