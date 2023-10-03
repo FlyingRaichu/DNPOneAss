@@ -63,6 +63,18 @@ public class UserLogic : IUserLogic
         // other validation stuff
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        User? existing = await userDao.GetByIdAsync(id);
+        if (existing == null)
+        {
+            throw new Exception($"User with ID {id} not found");
+        }
+
+        await userDao.DeleteAsync(id);
+
+    }
+
     private void ValidateUser(UserCreationDto dto)
     {
         string userName = dto.UserName;

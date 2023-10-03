@@ -11,4 +11,5 @@ public interface IUserDao
     Task<IEnumerable<User>> GetAsync(SearchUserParametersDto searchParameters);
     Task UpdateAsync(User user);
     Task<User?> GetByIdAsync(int id);
+    Task DeleteAsync(int id);
 }

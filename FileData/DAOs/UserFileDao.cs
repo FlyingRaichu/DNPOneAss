@@ -52,6 +52,19 @@ public class UserFileDao : IUserDao
         return Task.FromResult(existing);
     }
 
+    public Task DeleteAsync(int id)
+    {
+        User? existing = context.Users.FirstOrDefault(u => u.Id == id);
+        if (existing == null)
+        {
+            throw new Exception($"Todo with id {id} does not exist!");
+        }
+
+        context.Users.Remove(existing);
+        context.SaveData();
+        return Task.CompletedTask;
+    }
+
 
     public Task<User?> GetByUsernameAsync(string userName)
     {
