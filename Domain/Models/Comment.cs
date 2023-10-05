@@ -5,7 +5,7 @@ public class Comment
     public int Id { get; set; }
     public User Owner { get; }
     public Post Parent { get; }
-    public string Content { get; }
+    public string Content { get; set; }
     public int Upvotes { get; set; }
 
     public Comment(User owner, Post parent, string content)
