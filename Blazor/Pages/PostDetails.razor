@@ -1,0 +1,23 @@
+@page "/PostDetails/{postId}"
+@using HttpClients.ClientInterfaces
+@using Domain.Models
+@inject IPostService postService;
+<h3>PostDetails</h3>
+
+@if (post != null)
+{
+    <p><strong>Title:</strong>@post.Title</p>
+}
+
+
+@code {
+    [Parameter]
+    public string postId { get; set; }
+
+    private Post post;
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = await postService.GetPostAsync(postId);
+    }
+}

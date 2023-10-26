@@ -7,11 +7,11 @@ namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PostController : ControllerBase
+public class PostsController : ControllerBase
 {
     private readonly IPostLogic postLogic;
 
-    public PostController(IPostLogic postLogic)
+    public PostsController(IPostLogic postLogic)
     {
         this.postLogic = postLogic;
     }
@@ -41,6 +41,21 @@ public class PostController : ControllerBase
             SearchPostParameters parameters = new(title, parentSubForum, owner, content, upvotes);
             var posts = await postLogic.GetAsync(parameters);
             return Ok(posts);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Post>> GetByIdAsync([FromRoute]int id)
+    {
+        try
+        {
+           var post = await postLogic.GetByIdAsync(id);
+            return Ok(post);
         }
         catch (Exception e)
         {

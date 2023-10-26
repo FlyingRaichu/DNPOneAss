@@ -71,6 +71,12 @@ public class UserFileDao : IUserDao
         User? existing = context.Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
         return Task.FromResult(existing);
     }
+    
+    public Task<User?> GetByEmailAsync(string email)
+    {
+        User? existing = context.Users.FirstOrDefault(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+        return Task.FromResult(existing);
+    }
 
     public Task<IEnumerable<User>> GetAsync(SearchUserParametersDto searchParameters)
     {

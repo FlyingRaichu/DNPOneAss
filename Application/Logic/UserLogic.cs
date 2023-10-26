@@ -1,4 +1,5 @@
-﻿using Application.DaoInterfaces;
+﻿using System.Net.Mail;
+using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
@@ -19,8 +20,11 @@ public class UserLogic : IUserLogic
     {
         //checks if the username exists (it's a unique value)
         User? existing = await userDao.GetByUsernameAsync(dto.UserName);
+        User? existingEmail = await userDao.GetByEmailAsync(dto.Email);
         if (existing != null)
             throw new Exception("Username already taken!");
+        if (existingEmail != null)
+            throw new Exception("Email already exists!");
 
         ValidateUser(dto);
         User userToCreate = new User(dto.UserName, dto.Password, dto.Email);
@@ -83,5 +87,7 @@ public class UserLogic : IUserLogic
 
         if (userName.Length > 20)
             throw new Exception("Username must be less than 20 characters!");
+
+        var addr = new MailAddress(dto.Email);
     }
 }

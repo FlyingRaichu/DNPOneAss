@@ -5,28 +5,63 @@
       "UserName": "Dang",
       "Password": "12345",
       "Email": "email@domain.com",
-      "CakeDay": "2023-10-05T00:00:00+02:00"
+      "CakeDay": "2023-10-26T00:00:00+02:00"
     },
     {
       "Id": 2,
       "UserName": "Gosho",
       "Password": "Granatata",
       "Email": "GoshoGranatata@gmail.com",
-      "CakeDay": "2023-10-05T00:00:00+02:00"
+      "CakeDay": "2023-10-26T00:00:00+02:00"
     },
     {
       "Id": 3,
       "UserName": "GoshoGranatata",
       "Password": "123123",
       "Email": "Goshogranatata@gmail.com",
-      "CakeDay": "2023-10-05T00:00:00+02:00"
+      "CakeDay": "2023-10-26T00:00:00+02:00"
     },
     {
       "Id": 4,
       "UserName": "Nop123",
       "Password": "newPassword",
       "Email": "email@domain.dk",
-      "CakeDay": "2023-10-05T00:00:00+02:00"
+      "CakeDay": "2023-10-26T00:00:00+02:00"
+    },
+    {
+      "Id": 5,
+      "UserName": "FlyingRaichu",
+      "Password": "123123as",
+      "Email": "FlyingRaichu@gmail.com",
+      "CakeDay": "2023-10-26T00:00:00+02:00"
+    },
+    {
+      "Id": 6,
+      "UserName": "Testy",
+      "Password": "test",
+      "Email": "Testy@gmail.com",
+      "CakeDay": "2023-10-26T00:00:00+02:00"
+    },
+    {
+      "Id": 7,
+      "UserName": "Testy2",
+      "Password": "test",
+      "Email": "Testy2@gmail.com",
+      "CakeDay": "2023-10-26T00:00:00+02:00"
+    },
+    {
+      "Id": 8,
+      "UserName": "sad",
+      "Password": "sad",
+      "Email": "test@gmail.com",
+      "CakeDay": "2023-10-26T00:00:00+02:00"
+    },
+    {
+      "Id": 9,
+      "UserName": "sad2",
+      "Password": "sad2",
+      "Email": "test@gmail.com",
+      "CakeDay": "2023-10-26T00:00:00+02:00"
     }
   ],
   "SubForums": [
@@ -39,7 +74,7 @@
         "UserName": "Gosho",
         "Password": "Granatata",
         "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-05T00:00:00+02:00"
+        "CakeDay": "2023-10-26T00:00:00+02:00"
       }
     }
   ],
@@ -55,7 +90,7 @@
           "UserName": "Gosho",
           "Password": "Granatata",
           "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-05T00:00:00+02:00"
+          "CakeDay": "2023-10-26T00:00:00+02:00"
         }
       },
       "Owner": {
@@ -63,10 +98,60 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-05T00:00:00+02:00"
+        "CakeDay": "2023-10-26T00:00:00+02:00"
       },
       "Title": "That is a good q",
       "Content": "I wanna go home",
+      "Upvotes": 0
+    },
+    {
+      "Id": 2,
+      "Parent": {
+        "Id": 1,
+        "Title": "Why am I here",
+        "Description": "me deaad",
+        "Owner": {
+          "Id": 2,
+          "UserName": "Gosho",
+          "Password": "Granatata",
+          "Email": "GoshoGranatata@gmail.com",
+          "CakeDay": "2023-10-26T00:00:00+02:00"
+        }
+      },
+      "Owner": {
+        "Id": 1,
+        "UserName": "Dang",
+        "Password": "12345",
+        "Email": "email@domain.com",
+        "CakeDay": "2023-10-26T00:00:00+02:00"
+      },
+      "Title": "string",
+      "Content": "string",
+      "Upvotes": 0
+    },
+    {
+      "Id": 3,
+      "Parent": {
+        "Id": 1,
+        "Title": "Why am I here",
+        "Description": "me deaad",
+        "Owner": {
+          "Id": 2,
+          "UserName": "Gosho",
+          "Password": "Granatata",
+          "Email": "GoshoGranatata@gmail.com",
+          "CakeDay": "2023-10-26T00:00:00+02:00"
+        }
+      },
+      "Owner": {
+        "Id": 1,
+        "UserName": "Dang",
+        "Password": "12345",
+        "Email": "email@domain.com",
+        "CakeDay": "2023-10-26T00:00:00+02:00"
+      },
+      "Title": "Fock off",
+      "Content": "string",
       "Upvotes": 0
     }
   ],
@@ -78,7 +163,7 @@
         "UserName": "Gosho",
         "Password": "Granatata",
         "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-05T00:00:00+02:00"
+        "CakeDay": "2023-10-26T00:00:00+02:00"
       },
       "Parent": {
         "Id": 1,
@@ -91,7 +176,7 @@
             "UserName": "Gosho",
             "Password": "Granatata",
             "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-05T00:00:00+02:00"
+            "CakeDay": "2023-10-26T00:00:00+02:00"
           }
         },
         "Owner": {
@@ -99,7 +184,7 @@
           "UserName": "Dang",
           "Password": "12345",
           "Email": "email@domain.com",
-          "CakeDay": "2023-10-05T00:00:00+02:00"
+          "CakeDay": "2023-10-26T00:00:00+02:00"
         },
         "Title": "That is a good q",
         "Content": "I wanna go home",

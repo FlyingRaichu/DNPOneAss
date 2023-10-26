@@ -76,6 +76,17 @@ public class PostLogic : IPostLogic
         await postDao.UpdateAsync(updated);
     }
 
+    public async Task<Post> GetByIdAsync(int id)
+    {
+        Post? post = await postDao.GetByIdAsync(id);
+        if (post == null)
+        {
+            throw new Exception($"Post with id {id} doesn't exist");
+        }
+
+        return post;
+    }
+
     public async Task DeleteAsync(int id)
     {
         Post? post = await postDao.GetByIdAsync(id);
