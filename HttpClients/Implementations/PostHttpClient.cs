@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Domain.DTOs;
 using Domain.Models;
 using HttpClients.ClientInterfaces;
 
@@ -13,9 +14,9 @@ public class PostHttpClient : IPostService
         this.client = client;
     }
 
-    public async Task<Post> GetPostAsync(string postIdString)
+    public async Task<Post> GetPostAsync(int postId)
     {
-        HttpResponseMessage response = await client.GetAsync($"/posts/{postIdString}");
+        HttpResponseMessage response = await client.GetAsync($"/posts/{postId}");
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {

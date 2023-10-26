@@ -1,5 +1,6 @@
-@page "/PostDetails/{postId}"
+@page "/PostDetails/{postId:int}"
 @using HttpClients.ClientInterfaces
+@using Domain.DTOs
 @using Domain.Models
 @inject IPostService postService;
 <h3>PostDetails</h3>
@@ -12,7 +13,7 @@
 
 @code {
     [Parameter]
-    public string postId { get; set; }
+    public int postId { get; set; }
 
     private Post post;
 

@@ -5,7 +5,7 @@ namespace HttpClients.ClientInterfaces;
 
 public interface IPostService
 {
-    Task<Post> GetPostAsync(string postIdString);
+    Task<Post> GetPostAsync(int postId);
     Task<ICollection<Post>> GetAsync(
         string? userName, 
         int? userId, 
