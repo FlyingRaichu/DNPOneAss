@@ -9,4 +9,5 @@ public interface ISubForumLogic
     Task<IEnumerable<SubForum>> GetAsync(SearchSubForumParameters searchParameters);
     Task UpdateAsync(SubForumUpdateDto dto);
     Task DeleteAsync(int id);
+    Task<SubForum> GetByIdAsync(int id);
 }

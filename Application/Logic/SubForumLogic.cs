@@ -37,7 +37,7 @@ public class SubForumLogic : ISubForumLogic
 
     public async Task UpdateAsync(SubForumUpdateDto dto)
     {
-        SubForum? existing = await subForumDao.getByIdAsync(dto.Id);
+        SubForum? existing = await subForumDao.GetByIdAsync(dto.Id);
 
         if (existing == null)
         {
@@ -71,7 +71,7 @@ public class SubForumLogic : ISubForumLogic
 
     public async Task DeleteAsync(int id)
     {
-        SubForum? subForum = await subForumDao.getByIdAsync(id);
+        SubForum? subForum = await subForumDao.GetByIdAsync(id);
 
         if (subForum == null)
         {
@@ -79,6 +79,17 @@ public class SubForumLogic : ISubForumLogic
         }
 
         await subForumDao.DeleteAsync(id);
+    }
+
+    public async Task<SubForum> GetByIdAsync(int id)
+    {
+        SubForum? subForum = await subForumDao.GetByIdAsync(id);
+        if (subForum == null)
+        {
+            throw new Exception($"SubForum with id {id} not found");
+        }
+
+        return new SubForum(subForum.Owner, subForum.Title, subForum.Description);
     }
 
     private void ValidateSubForum(SubForumCreationDto dto)

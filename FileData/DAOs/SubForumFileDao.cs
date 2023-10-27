@@ -72,7 +72,7 @@ public class SubForumFileDao : ISubForumDao
         return Task.CompletedTask;
     }
 
-    public Task<SubForum?> getByIdAsync(int dtoId)
+    public Task<SubForum?> GetByIdAsync(int dtoId)
     {
         SubForum? subForum = context.SubForums.FirstOrDefault(sForum => sForum.Id == dtoId);
 

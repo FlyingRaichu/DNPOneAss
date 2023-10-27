@@ -26,7 +26,7 @@ public class PostLogic : IPostLogic
             throw new Exception($"User not found.");
         }
 
-        SubForum? subForum = await subForumDao.getByIdAsync(dto.SubForumParentId);
+        SubForum? subForum = await subForumDao.GetByIdAsync(dto.SubForumParentId);
         if (subForum == null)
         {
             throw new Exception($"Sub forum not found.");
@@ -56,7 +56,7 @@ public class PostLogic : IPostLogic
 
         if (dto.ParentSubForum != null)
         {
-            subForum = await subForumDao.getByIdAsync((int)dto.ParentSubForum);
+            subForum = await subForumDao.GetByIdAsync((int)dto.ParentSubForum);
             if (subForum == null)
             {
                 throw new Exception($"Sub forum with ID {dto.ParentSubForum} not found.");

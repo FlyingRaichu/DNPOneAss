@@ -16,6 +16,7 @@ builder.Services.AddSingleton<HttpClient>(new HttpClient
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserHttpClient>();
 builder.Services.AddScoped<IPostService, PostHttpClient>();
+builder.Services.AddScoped<ISubForumService, SubForumHttpClient>();
 
 var app = builder.Build();
 

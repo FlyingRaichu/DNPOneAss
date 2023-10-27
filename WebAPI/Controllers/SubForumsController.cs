@@ -8,11 +8,11 @@ namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SubForumController : ControllerBase
+public class SubForumsController : ControllerBase
 {
     private readonly ISubForumLogic subForumLogic;
 
-    public SubForumController(ISubForumLogic subForumLogic)
+    public SubForumsController(ISubForumLogic subForumLogic)
     {
         this.subForumLogic = subForumLogic;
     }
@@ -71,6 +71,21 @@ public class SubForumController : ControllerBase
         {
             await subForumLogic.DeleteAsync(id);
             return Ok();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<SubForum>> GetById([FromRoute] int id)
+    {
+        try
+        {
+            SubForum result = await subForumLogic.GetByIdAsync(id);
+            return Ok(result);
         }
         catch (Exception e)
         {

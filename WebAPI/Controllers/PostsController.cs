@@ -33,7 +33,7 @@ public class PostsController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetAsync([FromQuery] string? title,
-        [FromQuery] string? parentSubForum, [FromQuery] string? owner, [FromQuery] string? content,
+        [FromQuery] int? parentSubForum, [FromQuery] string? owner, [FromQuery] string? content,
         [FromQuery] int? upvotes)
     {
         try

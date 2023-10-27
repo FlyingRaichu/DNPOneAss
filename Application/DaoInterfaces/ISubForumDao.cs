@@ -8,6 +8,6 @@ public interface ISubForumDao
     Task<SubForum> CreateAsync(SubForum subForum);
     Task<IEnumerable<SubForum>> GetAsync(SearchSubForumParameters searchParameters);
     Task UpdateAsync(SubForum subForum);
-    Task<SubForum?> getByIdAsync(int dtoId);
+    Task<SubForum?> GetByIdAsync(int dtoId);
     Task DeleteAsync(int id);
 }

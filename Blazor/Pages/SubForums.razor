@@ -1,0 +1,63 @@
+@page "/SubForums"
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@inject ISubForumService subForumService;
+@inject NavigationManager navMgr
+<h3>SubForums</h3>
+
+<div>
+    <button @onclick="LoadSubForums">Load</button>
+</div>
+
+@if (subForums == null)
+{
+}
+else if (!subForums.Any())
+{
+    <p>No SubForums to display</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>SubForums</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in subForums)
+        {
+            <tr>
+                <td @onclick="@(() => navMgr.NavigateTo($"/SubForumDetails/{@item.Id}"))">
+                    @item.Title
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<SubForum>? subForums;
+    private string msg = "";
+
+    private async Task LoadSubForums()
+    {
+        try
+        {
+            subForums = await subForumService.GetAsync(null, null, null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSubForums();
+    }
+    
+    
+}

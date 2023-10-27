@@ -38,11 +38,11 @@ public class PostFileDao : IPostDao
         {
             posts = posts.Where(fPost => fPost.Title.Contains(parameters.Title, StringComparison.OrdinalIgnoreCase));
         }
-
-        if (!string.IsNullOrEmpty(parameters.ParentSubForum))
+        
+        if (parameters.ParentSubForum != null)
         {
             posts = posts.Where(fPost =>
-                fPost.Parent.Title.Contains(parameters.ParentSubForum, StringComparison.OrdinalIgnoreCase));
+                fPost.Parent.Id == parameters.ParentSubForum);
         }
 
         if (!string.IsNullOrEmpty(parameters.Owner))

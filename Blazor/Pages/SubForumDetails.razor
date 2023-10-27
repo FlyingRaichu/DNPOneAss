@@ -1,0 +1,74 @@
+@page "/SubForumDetails/{subId:int}"
+@using HttpClients.ClientInterfaces
+@using Domain.DTOs
+@using Domain.Models
+@inject ISubForumService subForumService;
+@inject IPostService postService;
+@inject NavigationManager navMgr
+<h3>SubForumDetails</h3>
+
+<div>
+    <button @onclick="LoadPosts">Load</button>
+</div>
+
+@if (posts == null)
+{
+}
+else if (!posts.Any())
+{
+    <p>No Posts to display</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Posts</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in posts)
+        {
+            <tr>
+                <td @onclick="@(() => navMgr.NavigateTo($"/Posts/{@item.Id}"))">
+                   @item.Title
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+@if (!string.IsNullOrEmpty(msg))
+{
+    <label style="color: red">@msg</label>
+}
+
+@code {
+    [Parameter]
+    public int SubId { get; set; }
+
+    private SubForum subForum;
+    private IEnumerable<Post>? posts;
+    private string msg = "";
+
+    private async Task LoadPosts()
+    {
+        try
+        {
+            subForum = await subForumService.GetByIdAsync(SubId);
+            //todo after update put in the parameters
+            //posts = await postService.GetAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPosts();
+    }
+    
+}
