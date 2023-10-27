@@ -5,70 +5,70 @@
       "UserName": "Dang",
       "Password": "12345",
       "Email": "email@domain.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 2,
       "UserName": "Gosho",
       "Password": "Granatata",
       "Email": "GoshoGranatata@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 3,
       "UserName": "GoshoGranatata",
       "Password": "123123",
       "Email": "Goshogranatata@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 4,
       "UserName": "Nop123",
       "Password": "newPassword",
       "Email": "email@domain.dk",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 5,
       "UserName": "FlyingRaichu",
       "Password": "123123as",
       "Email": "FlyingRaichu@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 6,
       "UserName": "Testy",
       "Password": "test",
       "Email": "Testy@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 7,
       "UserName": "Testy2",
       "Password": "test",
       "Email": "Testy2@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 8,
       "UserName": "sad",
       "Password": "sad",
       "Email": "test@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 9,
       "UserName": "sad2",
       "Password": "sad2",
       "Email": "test@gmail.com",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     },
     {
       "Id": 10,
       "UserName": "Dang Jr.",
       "Password": "secret",
       "Email": "email2@domain.dk",
-      "CakeDay": "2023-10-26T00:00:00+02:00"
+      "CakeDay": "2023-10-27T00:00:00+02:00"
     }
   ],
   "SubForums": [
@@ -81,7 +81,7 @@
         "UserName": "Gosho",
         "Password": "Granatata",
         "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       }
     },
     {
@@ -93,7 +93,7 @@
         "UserName": "Gosho",
         "Password": "Granatata",
         "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       }
     }
   ],
@@ -109,7 +109,7 @@
           "UserName": "Gosho",
           "Password": "Granatata",
           "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         }
       },
       "Owner": {
@@ -117,7 +117,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Title": "That is a good q",
       "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -134,7 +134,7 @@
           "UserName": "Gosho",
           "Password": "Granatata",
           "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         }
       },
       "Owner": {
@@ -142,7 +142,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Title": "string",
       "Content": "string",
@@ -159,7 +159,7 @@
           "UserName": "Gosho",
           "Password": "Granatata",
           "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         }
       },
       "Owner": {
@@ -167,7 +167,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Title": "Fock off",
       "Content": "string",
@@ -182,7 +182,7 @@
         "UserName": "Gosho",
         "Password": "Granatata",
         "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Parent": {
         "Id": 1,
@@ -195,7 +195,7 @@
             "UserName": "Gosho",
             "Password": "Granatata",
             "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-26T00:00:00+02:00"
+            "CakeDay": "2023-10-27T00:00:00+02:00"
           }
         },
         "Owner": {
@@ -203,7 +203,7 @@
           "UserName": "Dang",
           "Password": "12345",
           "Email": "email@domain.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         },
         "Title": "That is a good q",
         "Content": "I wanna go home",
@@ -219,7 +219,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Parent": {
         "Id": 1,
@@ -232,7 +232,7 @@
             "UserName": "Gosho",
             "Password": "Granatata",
             "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-26T00:00:00+02:00"
+            "CakeDay": "2023-10-27T00:00:00+02:00"
           }
         },
         "Owner": {
@@ -240,7 +240,7 @@
           "UserName": "Dang",
           "Password": "12345",
           "Email": "email@domain.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         },
         "Title": "That is a good q",
         "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -256,7 +256,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Parent": {
         "Id": 1,
@@ -269,7 +269,7 @@
             "UserName": "Gosho",
             "Password": "Granatata",
             "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-26T00:00:00+02:00"
+            "CakeDay": "2023-10-27T00:00:00+02:00"
           }
         },
         "Owner": {
@@ -277,7 +277,7 @@
           "UserName": "Dang",
           "Password": "12345",
           "Email": "email@domain.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         },
         "Title": "That is a good q",
         "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -293,7 +293,7 @@
         "UserName": "Dang",
         "Password": "12345",
         "Email": "email@domain.com",
-        "CakeDay": "2023-10-26T00:00:00+02:00"
+        "CakeDay": "2023-10-27T00:00:00+02:00"
       },
       "Parent": {
         "Id": 1,
@@ -306,7 +306,7 @@
             "UserName": "Gosho",
             "Password": "Granatata",
             "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-26T00:00:00+02:00"
+            "CakeDay": "2023-10-27T00:00:00+02:00"
           }
         },
         "Owner": {
@@ -314,13 +314,50 @@
           "UserName": "Dang",
           "Password": "12345",
           "Email": "email@domain.com",
-          "CakeDay": "2023-10-26T00:00:00+02:00"
+          "CakeDay": "2023-10-27T00:00:00+02:00"
         },
         "Title": "That is a good q",
         "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "Upvotes": 0
       },
       "Content": "Bam",
+      "Upvotes": 0
+    },
+    {
+      "Id": 5,
+      "Owner": {
+        "Id": 1,
+        "UserName": "Dang",
+        "Password": "12345",
+        "Email": "email@domain.com",
+        "CakeDay": "2023-10-27T00:00:00+02:00"
+      },
+      "Parent": {
+        "Id": 3,
+        "Parent": {
+          "Id": 1,
+          "Title": "Why am I here",
+          "Description": "me deaad",
+          "Owner": {
+            "Id": 2,
+            "UserName": "Gosho",
+            "Password": "Granatata",
+            "Email": "GoshoGranatata@gmail.com",
+            "CakeDay": "2023-10-27T00:00:00+02:00"
+          }
+        },
+        "Owner": {
+          "Id": 1,
+          "UserName": "Dang",
+          "Password": "12345",
+          "Email": "email@domain.com",
+          "CakeDay": "2023-10-27T00:00:00+02:00"
+        },
+        "Title": "Fock off",
+        "Content": "string",
+        "Upvotes": 0
+      },
+      "Content": "no",
       "Upvotes": 0
     }
   ]

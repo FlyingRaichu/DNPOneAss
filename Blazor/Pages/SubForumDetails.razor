@@ -30,7 +30,7 @@ else
         @foreach (var item in posts)
         {
             <tr>
-                <td @onclick="@(() => navMgr.NavigateTo($"/Posts/{@item.Id}"))">
+                <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
                    @item.Title
                 </td>
             </tr>
@@ -56,8 +56,7 @@ else
         try
         {
             subForum = await subForumService.GetByIdAsync(SubId);
-            //todo after update put in the parameters
-            //posts = await postService.GetAsync();
+            posts = await postService.GetAsync(null, null, null, SubId);
         }
         catch (Exception e)
         {

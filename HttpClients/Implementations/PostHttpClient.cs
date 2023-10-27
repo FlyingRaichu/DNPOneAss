@@ -31,10 +31,12 @@ public class PostHttpClient : IPostService
         return post;
     }
 
-    public async Task<ICollection<Post>> GetAsync(string? userName, int? userId, bool? completedStatus,
-        string? titleContains)
+    public async Task<ICollection<Post>> GetAsync(string? description, int? userId,
+        string? titleContains, int? parentId)
     {
-        HttpResponseMessage response = await client.GetAsync("/posts");
+        string query = ConstructQuery(description, userId, titleContains, parentId); 
+        
+        HttpResponseMessage response = await client.GetAsync("/posts"+query);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -46,5 +48,35 @@ public class PostHttpClient : IPostService
             PropertyNameCaseInsensitive = true
         })!;
         return posts;
+    }
+
+    private static string ConstructQuery(string? content, int? userId, string? titleContains, int? parentId)
+    {
+        //Posts? title=This%20is%20a%20good%20q & parentSubForum=1 & owner=1 & content=L
+        string temp = "";
+        if (!string.IsNullOrEmpty(titleContains))
+        {
+            temp += string.IsNullOrEmpty(temp) ? "?" : "&";
+            temp += $"title={titleContains}";
+        }
+
+        if (parentId != null)
+        {
+            temp += string.IsNullOrEmpty(temp) ? "?" : "&";
+            temp += $"parentSubForum={parentId}";
+        }
+
+        if (userId != null)
+        {
+            temp += string.IsNullOrEmpty(temp) ? "?" : "&";
+            temp += $"owner={userId}";
+        }
+
+        if (!string.IsNullOrEmpty(content))
+        {
+            temp += $"?content={content}";
+        }
+
+        return temp;
     }
 }
