@@ -3,22 +3,117 @@
 @using Domain.DTOs
 @using Domain.Models
 @inject IPostService postService;
+@inject ICommentService commentService;
 <h3>PostDetails</h3>
 
 @if (post != null)
 {
-    <p><strong>Title:</strong>@post.Title</p>
+    <h1>
+        <strong>@post.Title</strong>
+    </h1>
+
+    <p>
+        @post.Content
+    </p>
+
+    <hr/>
+}
+
+@if (comments == null)
+{
+    <p>Loading comments...</p>
+}
+else if (!comments.Any())
+{
+    <p>No comments to display.</p>
+}
+else
+{
+    <br>
+    <h1>Comments:</h1>
+    <br>
+    <span>
+        <br>
+        <h3>Leave a comment!</h3><br>
+        <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
+        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
+    </span>
+    <table class="table">
+        <tbody>
+        @foreach (var comment in comments)
+        {
+            if (comment.Parent.Id == post.Id) //HACK: This needs to go in the filter system when we eventually implement it
+            {
+                <tr>
+                    <td>
+                        <h4>@comment.Owner.UserName</h4><br>@comment.Content
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}
+
+@if (!string.IsNullOrEmpty(resultMsg))
+{
+    <label style="color: red">@resultMsg</label>
 }
 
 
+
 @code {
+
     [Parameter]
     public int postId { get; set; }
 
-    private Post post;
+    private string resultMsg = "";
+    private IEnumerable<Comment>? comments;
+    private string message = "";
+
+    private Post? post;
 
     protected override async Task OnInitializedAsync()
     {
+        await LoadPost();
+        await LoadComments();
+    }
+
+    private async Task LoadPost()
+    {
         post = await postService.GetPostAsync(postId);
     }
+
+    private async Task LoadComments()
+    {
+        try
+        {
+            comments = await commentService.GetAsync(null, null, null, null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+        }
+    }
+
+    private async Task Create()
+    {
+        resultMsg = "";
+
+        try
+        {
+            CommentCreationDto dto = new CommentCreationDto(1, postId, message);
+            Comment comment = await commentService.CreateAsync(dto);
+            message = "";
+            resultMsg = "Message successfully posted";
+            comments = comments.Append(comment);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+        }
+    }
+
 }
