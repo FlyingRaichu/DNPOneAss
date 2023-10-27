@@ -16,14 +16,20 @@ public class SubForumHttpClient : ISubForumService
         this.client = client;
     }
     
-    public async Task CreateAsync(SubForumCreationDto dto)
+    public async Task<SubForum> CreateAsync(SubForumCreationDto dto)
     {
         HttpResponseMessage response = await client.PostAsJsonAsync("/subForums", dto);
+        string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
-            string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
+        
+        SubForum subForum = JsonSerializer.Deserialize<SubForum>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
+        return subForum;
     }
 
     public async Task<ICollection<SubForum>> GetAsync(string? titleContains, string? owner, string? descriptionContains)

@@ -12,4 +12,5 @@ public interface IPostService
         string? titleContains,
         int? parentId
     );
+    Task<Post> CreateAsync(PostCreationDto dto);
 }

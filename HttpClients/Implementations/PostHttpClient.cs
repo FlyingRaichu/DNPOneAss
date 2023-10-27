@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Json;
+using System.Text.Json;
 using Domain.DTOs;
 using Domain.Models;
 using HttpClients.ClientInterfaces;
@@ -48,6 +49,22 @@ public class PostHttpClient : IPostService
             PropertyNameCaseInsensitive = true
         })!;
         return posts;
+    }
+
+    public async Task<Post> CreateAsync(PostCreationDto dto)
+    {
+        HttpResponseMessage response = await client.PostAsJsonAsync("/posts", dto);
+        string content = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(content);
+        }
+        
+        Post post = JsonSerializer.Deserialize<Post>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
+        return post;
     }
 
     private static string ConstructQuery(string? content, int? userId, string? titleContains, int? parentId)

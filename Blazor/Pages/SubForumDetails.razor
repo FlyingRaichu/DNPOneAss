@@ -11,8 +11,26 @@
     <button @onclick="LoadPosts">Load</button>
 </div>
 
+@if (subForum != null)
+{
+    <h1>
+        <strong>r/@subForum.Title</strong>
+    </h1>
+    <p>
+        u/@subForum.Owner.UserName
+    </p>
+    <br>
+    
+    <p>
+        @subForum.Description
+    </p>
+
+    <hr/>
+}
+
 @if (posts == null)
 {
+    <p>No posts to display.</p>
 }
 else if (!posts.Any())
 {
@@ -20,6 +38,14 @@ else if (!posts.Any())
 }
 else
 {
+    <!--this probably should be in a different page :D-->
+    <span>
+        <br>
+        <h3>Create a post!</h3><br>
+        <input type="text" @bind="title" @bind:event="oninput" placeholder="Enter title..."/>
+        <input type="text" @bind="content" @bind:event="oninput" placeholder="Enter text..."/>
+        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content))" class="acceptbtn">Post</button>
+    </span>
     <table class="table">
         <thead>
         <tr>
@@ -31,7 +57,9 @@ else
         {
             <tr>
                 <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
-                   @item.Title
+                    <h5>@item.Title</h5>
+                    <p>@item.Owner.UserName</p>
+                    <p>@item.Content</p>
                 </td>
             </tr>
         }
@@ -47,9 +75,12 @@ else
     [Parameter]
     public int SubId { get; set; }
 
-    private SubForum subForum;
+    private SubForum? subForum;
     private IEnumerable<Post>? posts;
     private string msg = "";
+    private string rmsg = "";
+    private string title, content;
+    
 
     private async Task LoadPosts()
     {
@@ -68,6 +99,25 @@ else
     protected override async Task OnInitializedAsync()
     {
         await LoadPosts();
+    }
+    
+    private async Task Create()
+    {
+        rmsg = "";
+
+        try
+        {
+            PostCreationDto dto = new PostCreationDto(1, SubId, title, content);
+            Post post = await postService.CreateAsync(dto);
+            msg = "";
+            rmsg = "Post successfully posted";
+            posts = posts.Append(post);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            rmsg = e.Message;
+        }
     }
     
 }

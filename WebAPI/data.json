@@ -172,6 +172,56 @@
       "Title": "Fock off",
       "Content": "string",
       "Upvotes": 0
+    },
+    {
+      "Id": 4,
+      "Parent": {
+        "Id": 1,
+        "Title": "Why am I here",
+        "Description": "me deaad",
+        "Owner": {
+          "Id": 2,
+          "UserName": "Gosho",
+          "Password": "Granatata",
+          "Email": "GoshoGranatata@gmail.com",
+          "CakeDay": "2023-10-27T00:00:00+02:00"
+        }
+      },
+      "Owner": {
+        "Id": 1,
+        "UserName": "Dang",
+        "Password": "12345",
+        "Email": "email@domain.com",
+        "CakeDay": "2023-10-27T00:00:00+02:00"
+      },
+      "Title": "hello",
+      "Content": "bye",
+      "Upvotes": 0
+    },
+    {
+      "Id": 5,
+      "Parent": {
+        "Id": 1,
+        "Title": "Why am I here",
+        "Description": "me deaad",
+        "Owner": {
+          "Id": 2,
+          "UserName": "Gosho",
+          "Password": "Granatata",
+          "Email": "GoshoGranatata@gmail.com",
+          "CakeDay": "2023-10-27T00:00:00+02:00"
+        }
+      },
+      "Owner": {
+        "Id": 1,
+        "UserName": "Dang",
+        "Password": "12345",
+        "Email": "email@domain.com",
+        "CakeDay": "2023-10-27T00:00:00+02:00"
+      },
+      "Title": "this is a post",
+      "Content": "a long description",
+      "Upvotes": 0
     }
   ],
   "Comments": [

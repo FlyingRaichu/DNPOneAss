@@ -5,7 +5,7 @@ namespace HttpClients.ClientInterfaces;
 
 public interface ISubForumService
 {
-    Task CreateAsync(SubForumCreationDto dto);
+    Task<SubForum> CreateAsync(SubForumCreationDto dto);
     Task<ICollection<SubForum>> GetAsync(
         string? titleContains,
         string? owner,

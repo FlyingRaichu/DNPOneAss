@@ -2,7 +2,7 @@
 @using Domain.Models
 @using HttpClients.ClientInterfaces
 @inject IPostService postService;
-
+@inject NavigationManager navMgr
 <h3>Posts</h3>
 
 <div>
@@ -21,15 +21,15 @@ else
     <table class="table">
         <thead>
         <tr>
-            <th>Todo ID</th>
+            <th>Posts</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var item in posts)
         {
             <tr>
-                <td>
-                   <a href="/PostDetails/@item.Id">@item.Title</a> 
+                <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
+                   @item.Title 
                 </td>
             </tr>
         }
