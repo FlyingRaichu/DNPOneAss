@@ -1,0 +1,10 @@
+//Log in as GoshoGranatata
+POST https://localhost:7034/Users/login
+Content-Type: application/json
+
+{"username": "GoshoGranatata", "password": "123123"}
+
+###
+
+GET https://localhost:7034/Comments/
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI3NjA5OWJhNy0yMDA4LTRlODUtOTIzNC03ODBiYTQwNWM0OWIiLCJpYXQiOiIyOC8xMC8yMDIzIDE0OjQ1OjUzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6Ikdvc2hvR3JhbmF0YXRhIiwiRW1haWwiOiJHb3Nob2dyYW5hdGF0YUBnbWFpbC5jb20iLCJleHAiOjE2OTg1MDc5NTMsImlzcyI6IkpXVEF1dGhlbnRpY2F0aW9uU2VydmVyIiwiYXVkIjoiSldUU2VydmljZUJsYXpvcldhc21DbGllbnQifQ.fQgQWtqYsL9ohBapEYRdEUWnyf5RTR8RRauGCldhtFenAI76CooiCfkTcnOxygG1k1h96cniM0EQW4B9SKQMPg

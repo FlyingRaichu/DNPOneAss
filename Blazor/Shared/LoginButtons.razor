@@ -1,0 +1,32 @@
+@using HttpClients.ClientInterfaces
+@using Blazor.Service
+@inject NavigationManager NavigationManager
+@inject IUserService userService;
+@inject NavigationService NavigationService
+
+
+<AuthorizeView>
+    <Authorized>
+        <button @onclick="Logout">Log out</button>
+    </Authorized>
+    <NotAuthorized>
+        <button @onclick="Login">Login</button>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+
+    private void Login()
+    {
+        NavigationService.ReturnUrl = NavigationManager.Uri;
+        NavigationManager.NavigateTo("/Login");
+    }
+
+    private async Task Logout()
+    {
+        await userService.LogoutAsync();
+        NavigationManager.NavigateTo("/");
+    }
+
+}

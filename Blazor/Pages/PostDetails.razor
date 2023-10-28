@@ -31,28 +31,33 @@ else
 {
     <br>
     <h1>Comments:</h1>
-    <br>
-    <span>
-        <br>
-        <h3>Leave a comment!</h3><br>
-        <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
-        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
-    </span>
-    <table class="table">
-        <tbody>
-        @foreach (var comment in comments)
-        {
-            if (comment.Parent.Id == post.Id) //HACK: This needs to go in the filter system when we eventually implement it
-            {
-                <tr>
-                    <td>
-                        <h4>@comment.Owner.UserName</h4><br>@comment.Content
-                    </td>
-                </tr>
-            }
-        }
-        </tbody>
-    </table>
+    <AuthorizeView>
+        <Authorized>
+            <br>
+            <span>
+                <br>
+                <h3>Leave a comment!</h3><br>
+                <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
+                <button @onclick="Create" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
+            </span>
+            <table class="table">
+                <tbody>
+                @foreach (var comment in comments)
+                {
+                    <tr>
+                        <td>
+                            <h4>@comment.Owner.UserName</h4><br>@comment.Content
+                        </td>
+                    </tr>
+
+                }
+                </tbody>
+            </table>
+        </Authorized>
+        <NotAuthorized>
+            <h3>Please log in in order to view and post comments.</h3>
+        </NotAuthorized>
+    </AuthorizeView>
 }
 
 @if (!string.IsNullOrEmpty(resultMsg))
@@ -88,7 +93,7 @@ else
     {
         try
         {
-            comments = await commentService.GetAsync(null, null, null, null);
+            comments = await commentService.GetAsync(null, postId, null, null);
         }
         catch (Exception e)
         {

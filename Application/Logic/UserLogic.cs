@@ -79,6 +79,12 @@ public class UserLogic : IUserLogic
 
     }
 
+    public Task<User> ValidateUser(UserValidationDto dto)
+    {
+        return userDao.ValidateUser(dto.Username, dto.Password);
+    }
+
+
     private void ValidateUser(UserCreationDto dto)
     {
         string userName = dto.UserName;

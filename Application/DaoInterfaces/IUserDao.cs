@@ -13,4 +13,6 @@ public interface IUserDao
     Task UpdateAsync(User user);
     Task<User?> GetByIdAsync(int id);
     Task DeleteAsync(int id);
+    Task<User> ValidateUser(string username, string password);
+    
 }

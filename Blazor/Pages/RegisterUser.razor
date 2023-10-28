@@ -40,7 +40,7 @@
 
         try
         {
-            await userService.CreateAsync(new UserCreationDto(username, password, email));
+            await userService.RegisterAsync(new UserCreationDto(username, password, email));
             username = "";
             password = "";
             email = "";

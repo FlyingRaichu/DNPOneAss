@@ -65,6 +65,23 @@ public class UserFileDao : IUserDao
         return Task.CompletedTask;
     }
 
+    public Task<User> ValidateUser(string username, string password)
+    {
+        User? existingUser = context.Users.FirstOrDefault(u => u.UserName.Equals(username));
+
+        if (existingUser == null)
+        {
+            throw new Exception("User not found. Please ensure username/password is correct.");
+        }
+
+        if (!existingUser.Password.Equals(password))
+        {
+            throw new Exception("User not found. Please ensure username/password is correct.");
+        }
+
+        return Task.FromResult(existingUser);
+    }
+
 
     public Task<User?> GetByUsernameAsync(string userName)
     {

@@ -9,6 +9,7 @@
 
 <div>
     <button @onclick="LoadPosts">Load</button>
+    <button @onclick="@(() => navMgr.NavigateTo($"/PostCreation/{SubId}"))">Create a Post!</button>
 </div>
 
 @if (subForum != null)
@@ -38,14 +39,6 @@ else if (!posts.Any())
 }
 else
 {
-    <!--this probably should be in a different page :D-->
-    <span>
-        <br>
-        <h3>Create a post!</h3><br>
-        <input type="text" @bind="title" @bind:event="oninput" placeholder="Enter title..."/>
-        <input type="text" @bind="content" @bind:event="oninput" placeholder="Enter text..."/>
-        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content))" class="acceptbtn">Post</button>
-    </span>
     <table class="table">
         <thead>
         <tr>
@@ -101,23 +94,6 @@ else
         await LoadPosts();
     }
     
-    private async Task Create()
-    {
-        rmsg = "";
 
-        try
-        {
-            PostCreationDto dto = new PostCreationDto(1, SubId, title, content);
-            Post post = await postService.CreateAsync(dto);
-            msg = "";
-            rmsg = "Post successfully posted";
-            posts = posts.Append(post);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            rmsg = e.Message;
-        }
-    }
     
 }

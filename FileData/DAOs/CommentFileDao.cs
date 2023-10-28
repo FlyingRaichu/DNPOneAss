@@ -35,15 +35,15 @@ public class CommentFileDao : ICommentDao
     {
         IEnumerable<Comment> result = context.Comments.AsEnumerable();
 
-        if (!string.IsNullOrEmpty(searchParameters.Owner))
+        if (searchParameters.Owner != null)
         {
-            result = result.Where(comment => comment.Owner.UserName.Contains(searchParameters.Owner, StringComparison.OrdinalIgnoreCase));
+            result = result.Where(comment => comment.Owner.Id == searchParameters.Owner);
         }
 
-        if (!string.IsNullOrEmpty(searchParameters.Parent))
+        if (searchParameters.Parent != null)
         {
             result = result.Where(comment =>
-                comment.Parent.Title.Contains(searchParameters.Parent, StringComparison.OrdinalIgnoreCase));
+                comment.Parent.Id == searchParameters.Parent);
         }
 
         if (searchParameters.Content != null)

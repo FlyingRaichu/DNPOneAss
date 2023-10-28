@@ -1,0 +1,41 @@
+@page "/PostCreation/{subId:int}"
+@using Domain.DTOs
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@inject IPostService postService;
+@inject NavigationManager NavigationManager;
+<h3>PostCreation</h3>
+    <span>
+        <br>
+        <h3>Create a post!</h3><br>
+        <input type="text" @bind="title" @bind:event="oninput" placeholder="Enter title..."/>
+        <input type="text" @bind="content" @bind:event="oninput" placeholder="Enter text..."/>
+        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content))" class="acceptbtn">Post</button>
+    </span>
+
+@code {
+    [Parameter]
+    public int SubId { get; set; }
+    private string title, content;
+    private string msg = "";
+    private string rmsg = "";
+    
+    private async Task Create()
+    {
+        rmsg = "";
+
+        try
+        {
+            PostCreationDto dto = new PostCreationDto(1, SubId, title, content);
+            Post post = await postService.CreateAsync(dto);
+            msg = "";
+            rmsg = "Post successfully posted";
+            NavigationManager.NavigateTo($"/SubForumDetails/{SubId}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            rmsg = e.Message;
+        }
+    }
+}

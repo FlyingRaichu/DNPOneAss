@@ -15,9 +15,10 @@ public class CommentHttpClient : ICommentService
         this.client = client;
     }
 
-    public async Task<ICollection<Comment>> GetAsync(string? owner, string? parent, string? message, int? upvotes)
+    public async Task<ICollection<Comment>> GetAsync(int? owner, int? parent, string? message, int? upvotes)
     {
-        HttpResponseMessage response = await client.GetAsync("/comments");
+        string query = ConstructQuery(owner, parent, message, upvotes);
+        HttpResponseMessage response = await client.GetAsync("/comments" + query);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -30,6 +31,35 @@ public class CommentHttpClient : ICommentService
                 PropertyNameCaseInsensitive = true
             })!;
         return comments;
+    }
+    
+    private static string ConstructQuery(int? owner, int? parent, string? message, int? upvotes)
+    {
+        string query = "";
+        if (owner != null)
+        {
+            query += $"?owner={owner}";
+        }
+
+        if (parent != null)
+        {
+            query += string.IsNullOrEmpty(query) ? "?" : "&";
+            query += $"parent={parent}";
+        }
+
+        if (message != null)
+        {
+            query += string.IsNullOrEmpty(query) ? "?" : "&";
+            query += $"content={message}";
+        }
+
+        if (upvotes != null)
+        {
+            query += string.IsNullOrEmpty(query) ? "?" : "&";
+            query += $"upvotes={upvotes}";
+        }
+
+        return query;
     }
 
     public async Task<Comment> CreateAsync(CommentCreationDto dto)

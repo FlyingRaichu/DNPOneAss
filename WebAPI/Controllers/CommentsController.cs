@@ -1,7 +1,9 @@
 ﻿using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace WebAPI.Controllers;
 
@@ -11,10 +13,14 @@ public class CommentsController : ControllerBase
 {
     private readonly ICommentLogic commentLogic;
 
+
+
     public CommentsController(ICommentLogic commentLogic)
     {
         this.commentLogic = commentLogic;
     }
+
+    
 
     [HttpPost]
     public async Task<ActionResult<Comment>> CreateAsync([FromBody] CommentCreationDto dto)
@@ -32,7 +38,7 @@ public class CommentsController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Comment>>> GetAsync([FromQuery] string? owner, [FromQuery] string? parent,
+    public async Task<ActionResult<IEnumerable<Comment>>> GetAsync([FromQuery] int? owner, [FromQuery] int? parent,
         [FromQuery] string? content, [FromQuery] int? upvotes)
     {
         try
