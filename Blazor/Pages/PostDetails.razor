@@ -39,7 +39,7 @@ else
                 <br>
                 <h3>Leave a comment!</h3><br>
                 <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
-                <button @onclick="@(() => Create(context.User.Claims.First(claim => claim.Type == "Id").Value))" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
+                <button @onclick="@(() => CreateComment(context.User.Claims.First(claim => claim.Type == "Id").Value))" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
             </span>
             <table class="table">
                 <tbody>
@@ -103,7 +103,7 @@ else
         }
     }
 
-    private async Task Create(string id)
+    private async Task CreateComment(string id)
     {
         resultMsg = "";
         int ownerId = int.Parse(id);
