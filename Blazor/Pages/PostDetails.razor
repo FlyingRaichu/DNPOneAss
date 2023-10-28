@@ -4,6 +4,7 @@
 @using Domain.Models
 @inject IPostService postService;
 @inject ICommentService commentService;
+@using System.Security.Claims
 <h3>PostDetails</h3>
 
 @if (post != null)
@@ -38,7 +39,7 @@ else
                 <br>
                 <h3>Leave a comment!</h3><br>
                 <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
-                <button @onclick="Create" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
+                <button @onclick="@(() => Create(context.User.Claims.First(claim => claim.Type == "Id").Value))" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
             </span>
             <table class="table">
                 <tbody>
@@ -102,13 +103,13 @@ else
         }
     }
 
-    private async Task Create()
+    private async Task Create(string id)
     {
         resultMsg = "";
-
+        int ownerId = int.Parse(id);
         try
         {
-            CommentCreationDto dto = new CommentCreationDto(1, postId, message);
+            CommentCreationDto dto = new CommentCreationDto(ownerId, postId, message);
             Comment comment = await commentService.CreateAsync(dto);
             message = "";
             resultMsg = "Message successfully posted";
