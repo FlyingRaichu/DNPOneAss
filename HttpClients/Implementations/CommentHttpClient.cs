@@ -15,13 +15,21 @@ public class CommentHttpClient : ICommentService
         this.client = client;
     }
 
-    public async Task<ICollection<Comment>> GetAsync(int? owner, int? parent, string? message, int? upvotes)
+    public async Task<ICollection<Comment>> GetAsync(int? owner, int? parent, string? message, int? upvotes, string? token)
     {
         string query = ConstructQuery(owner, parent, message, upvotes);
-        HttpResponseMessage response = await client.GetAsync("/comments" + query);
+        var request = new HttpRequestMessage(HttpMethod.Get, "/comments" + query);
+        if (!string.IsNullOrEmpty(token))
+        {
+            request.Headers.Add("Authorization", "Bearer " + token);
+        }
+
+        HttpResponseMessage response = await client.SendAsync(request);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
+            Console.WriteLine(request);
+            Console.WriteLine(response);
             throw new Exception(content);
         }
 

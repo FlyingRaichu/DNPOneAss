@@ -5,6 +5,7 @@
 @inject IPostService postService;
 @inject ICommentService commentService;
 @using System.Security.Claims
+@using HttpClients.Implementations
 <h3>PostDetails</h3>
 
 @if (post != null)
@@ -50,7 +51,6 @@ else
                             <h4>@comment.Owner.UserName</h4><br>@comment.Content
                         </td>
                     </tr>
-
                 }
                 </tbody>
             </table>
@@ -94,7 +94,7 @@ else
     {
         try
         {
-            comments = await commentService.GetAsync(null, postId, null, null);
+            comments = await commentService.GetAsync(null, postId, null, null, UserHttpClient.Jwt);
         }
         catch (Exception e)
         {
