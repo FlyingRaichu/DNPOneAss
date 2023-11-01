@@ -9,7 +9,11 @@
 
 <div>
     <button @onclick="LoadPosts">Load</button>
-    <button @onclick="@(() => navMgr.NavigateTo($"/PostCreation/{SubId}"))">Create a Post!</button>
+    <AuthorizeView>
+        <Authorized>
+        <button @onclick="@(() => navMgr.NavigateTo($"/PostCreation/{SubId}"))">Create a Post!</button>
+        </Authorized>
+    </AuthorizeView>
 </div>
 
 @if (subForum != null)

@@ -6,7 +6,7 @@
 @inject ICommentService commentService;
 @using System.Security.Claims
 @using HttpClients.Implementations
-<h3>PostDetails</h3>
+<h3>Post Details</h3>
 
 @if (post != null)
 {
@@ -27,6 +27,17 @@
 }
 else if (!comments.Any())
 {
+    <AuthorizeView>
+        <Authorized>
+            <br>
+            <span>
+                <br>
+                <h3>Leave a comment!</h3><br>
+                <input type="text" @bind="message" @bind:event="oninput" placeholder="Write your comment..."/>
+                <button @onclick="@(() => CreateComment(context.User.Claims.First(claim => claim.Type == "Id").Value))" disabled="@(string.IsNullOrEmpty(message))" class="acceptbtn">Post</button>
+            </span>
+        </Authorized>
+    </AuthorizeView>
     <p>No comments to display.</p>
 }
 else

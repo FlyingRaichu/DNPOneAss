@@ -2,98 +2,23 @@
   "Users": [
     {
       "Id": 1,
-      "UserName": "Dang",
-      "Password": "12345",
-      "Email": "email@domain.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 2,
-      "UserName": "Gosho",
-      "Password": "Granatata",
-      "Email": "GoshoGranatata@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 3,
-      "UserName": "GoshoGranatata",
-      "Password": "123123",
-      "Email": "Goshogranatata@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 4,
-      "UserName": "Nop123",
-      "Password": "newPassword",
-      "Email": "email@domain.dk",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 5,
-      "UserName": "FlyingRaichu",
-      "Password": "123123as",
-      "Email": "FlyingRaichu@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 6,
-      "UserName": "Testy",
-      "Password": "test",
-      "Email": "Testy@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 7,
-      "UserName": "Testy2",
-      "Password": "test",
-      "Email": "Testy2@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 8,
-      "UserName": "sad",
-      "Password": "sad",
+      "UserName": "Test",
+      "Password": "Test",
       "Email": "test@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 9,
-      "UserName": "sad2",
-      "Password": "sad2",
-      "Email": "test@gmail.com",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
-    },
-    {
-      "Id": 10,
-      "UserName": "Dang Jr.",
-      "Password": "secret",
-      "Email": "email2@domain.dk",
-      "CakeDay": "2023-10-28T00:00:00+02:00"
+      "CakeDay": "2023-11-01T00:00:00+01:00"
     }
   ],
   "SubForums": [
     {
       "Id": 1,
-      "Title": "Why am I here",
-      "Description": "me deaad",
+      "Title": "Q\u0026A",
+      "Description": "A subforum dedicated to answering questions",
       "Owner": {
-        "Id": 2,
-        "UserName": "Gosho",
-        "Password": "Granatata",
-        "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      }
-    },
-    {
-      "Id": 2,
-      "Title": "What a life",
-      "Description": "Isn\u0027t this fun, guys?",
-      "Owner": {
-        "Id": 2,
-        "UserName": "Gosho",
-        "Password": "Granatata",
-        "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
+        "Id": 1,
+        "UserName": "Test",
+        "Password": "Test",
+        "Email": "test@gmail.com",
+        "CakeDay": "2023-11-01T00:00:00+01:00"
       }
     }
   ],
@@ -102,150 +27,25 @@
       "Id": 1,
       "Parent": {
         "Id": 1,
-        "Title": "Why am I here",
-        "Description": "me deaad",
+        "Title": "Q\u0026A",
+        "Description": "A subforum dedicated to answering questions",
         "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
+          "Id": 1,
+          "UserName": "Test",
+          "Password": "Test",
+          "Email": "test@gmail.com",
+          "CakeDay": "2023-11-01T00:00:00+01:00"
         }
       },
       "Owner": {
         "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
+        "UserName": "Test",
+        "Password": "Test",
+        "Email": "test@gmail.com",
+        "CakeDay": "2023-11-01T00:00:00+01:00"
       },
-      "Title": "That is a good q",
-      "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Upvotes": 0
-    },
-    {
-      "Id": 2,
-      "Parent": {
-        "Id": 1,
-        "Title": "Why am I here",
-        "Description": "me deaad",
-        "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        }
-      },
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Title": "string",
-      "Content": "string",
-      "Upvotes": 0
-    },
-    {
-      "Id": 3,
-      "Parent": {
-        "Id": 1,
-        "Title": "Why am I here",
-        "Description": "me deaad",
-        "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        }
-      },
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Title": "Fock off",
-      "Content": "string",
-      "Upvotes": 0
-    },
-    {
-      "Id": 4,
-      "Parent": {
-        "Id": 1,
-        "Title": "Why am I here",
-        "Description": "me deaad",
-        "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        }
-      },
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Title": "hello",
-      "Content": "bye",
-      "Upvotes": 0
-    },
-    {
-      "Id": 5,
-      "Parent": {
-        "Id": 1,
-        "Title": "Why am I here",
-        "Description": "me deaad",
-        "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        }
-      },
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Title": "this is a post",
-      "Content": "a long description",
-      "Upvotes": 0
-    },
-    {
-      "Id": 6,
-      "Parent": {
-        "Id": 2,
-        "Title": "What a life",
-        "Description": "Isn\u0027t this fun, guys?",
-        "Owner": {
-          "Id": 2,
-          "UserName": "Gosho",
-          "Password": "Granatata",
-          "Email": "GoshoGranatata@gmail.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        }
-      },
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Title": "Testy",
-      "Content": "This is a test post",
+      "Title": "Computer question",
+      "Content": "I have this weird thing happening to my computer. Please help me.",
       "Upvotes": 0
     }
   ],
@@ -253,260 +53,38 @@
     {
       "Id": 1,
       "Owner": {
-        "Id": 2,
-        "UserName": "Gosho",
-        "Password": "Granatata",
-        "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
+        "Id": 1,
+        "UserName": "Test",
+        "Password": "Test",
+        "Email": "test@gmail.com",
+        "CakeDay": "2023-11-01T00:00:00+01:00"
       },
       "Parent": {
         "Id": 1,
         "Parent": {
           "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
+          "Title": "Q\u0026A",
+          "Description": "A subforum dedicated to answering questions",
           "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
+            "Id": 1,
+            "UserName": "Test",
+            "Password": "Test",
+            "Email": "test@gmail.com",
+            "CakeDay": "2023-11-01T00:00:00+01:00"
           }
         },
         "Owner": {
           "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
+          "UserName": "Test",
+          "Password": "Test",
+          "Email": "test@gmail.com",
+          "CakeDay": "2023-11-01T00:00:00+01:00"
         },
-        "Title": "That is a good q",
-        "Content": "I wanna go home",
+        "Title": "Computer question",
+        "Content": "I have this weird thing happening to my computer. Please help me.",
         "Upvotes": 0
       },
-      "Content": "Well, this is a very good question indeed and I have the answer. I\u0027m not going to tell you what it is, though",
-      "Upvotes": 0
-    },
-    {
-      "Id": 2,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 1,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "That is a good q",
-        "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Upvotes": 0
-      },
-      "Content": "I do agree, this is a very nice question. However, one must consider many different aspects of it before being able to answer.",
-      "Upvotes": 0
-    },
-    {
-      "Id": 3,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 1,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "That is a good q",
-        "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Upvotes": 0
-      },
-      "Content": "Sad",
-      "Upvotes": 0
-    },
-    {
-      "Id": 4,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 1,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "That is a good q",
-        "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Upvotes": 0
-      },
-      "Content": "Bam",
-      "Upvotes": 0
-    },
-    {
-      "Id": 5,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Dang",
-        "Password": "12345",
-        "Email": "email@domain.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 3,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "Fock off",
-        "Content": "string",
-        "Upvotes": 0
-      },
-      "Content": "no",
-      "Upvotes": 0
-    },
-    {
-      "Id": 6,
-      "Owner": {
-        "Id": 3,
-        "UserName": "GoshoGranatata",
-        "Password": "123123",
-        "Email": "Goshogranatata@gmail.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 1,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "That is a good q",
-        "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Upvotes": 0
-      },
-      "Content": "Spoko",
-      "Upvotes": 0
-    },
-    {
-      "Id": 7,
-      "Owner": {
-        "Id": 2,
-        "UserName": "Gosho",
-        "Password": "Granatata",
-        "Email": "GoshoGranatata@gmail.com",
-        "CakeDay": "2023-10-28T00:00:00+02:00"
-      },
-      "Parent": {
-        "Id": 1,
-        "Parent": {
-          "Id": 1,
-          "Title": "Why am I here",
-          "Description": "me deaad",
-          "Owner": {
-            "Id": 2,
-            "UserName": "Gosho",
-            "Password": "Granatata",
-            "Email": "GoshoGranatata@gmail.com",
-            "CakeDay": "2023-10-28T00:00:00+02:00"
-          }
-        },
-        "Owner": {
-          "Id": 1,
-          "UserName": "Dang",
-          "Password": "12345",
-          "Email": "email@domain.com",
-          "CakeDay": "2023-10-28T00:00:00+02:00"
-        },
-        "Title": "That is a good q",
-        "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "Upvotes": 0
-      },
-      "Content": "It works?",
+      "Content": "I happen to be an expert in the field. This is how you do it.",
       "Upvotes": 0
     }
   ]
