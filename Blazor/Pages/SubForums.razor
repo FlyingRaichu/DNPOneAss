@@ -3,11 +3,8 @@
 @using HttpClients.ClientInterfaces
 @inject ISubForumService subForumService;
 @inject NavigationManager navMgr
-<h3>SubForums</h3>
+<h3>Sub Forums</h3>
 
-<div>
-    <button @onclick="LoadSubForums">Load</button>
-</div>
 
 @if (subForums == null)
 {

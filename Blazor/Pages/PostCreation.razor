@@ -5,28 +5,33 @@
 @inject IPostService postService;
 @inject NavigationManager NavigationManager;
 <h3>Post Creation</h3>
+<AuthorizeView>
     <span>
         <br>
         <h3>Create a post!</h3><br>
         <input type="text" @bind="title" @bind:event="oninput" placeholder="Enter title..."/>
         <input type="text" @bind="content" @bind:event="oninput" placeholder="Enter text..."/>
-        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content))" class="acceptbtn">Post</button>
+        <button @onclick="@(() => Create(context.User.Claims.First(claim => claim.Type == "Id").Value))" disabled="@(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content))" class="acceptbtn">Post</button>
     </span>
+</AuthorizeView>
 
 @code {
+
     [Parameter]
     public int SubId { get; set; }
+
     private string title, content;
     private string msg = "";
     private string rmsg = "";
-    
-    private async Task Create()
+
+    private async Task Create(string id)
     {
         rmsg = "";
 
         try
         {
-            PostCreationDto dto = new PostCreationDto(1, SubId, title, content);
+            int ownerId = int.Parse(id);
+            PostCreationDto dto = new PostCreationDto(ownerId, SubId, title, content);
             Post post = await postService.CreateAsync(dto);
             msg = "";
             rmsg = "Post successfully posted";
@@ -38,4 +43,5 @@
             rmsg = e.Message;
         }
     }
+
 }
