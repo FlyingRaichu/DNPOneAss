@@ -6,7 +6,6 @@
 @inject ICommentService commentService;
 @using System.Security.Claims
 @using HttpClients.Implementations
-<h3>Post Details</h3>
 
 @if (post != null)
 {
@@ -43,7 +42,7 @@ else if (!comments.Any())
 else
 {
     <br>
-    <h1>Comments:</h1>
+    <h1>Comments</h1>
     <AuthorizeView>
         <Authorized>
             <br>
@@ -67,7 +66,7 @@ else
             </table>
         </Authorized>
         <NotAuthorized>
-            <h3>Please log in in order to view and post comments.</h3>
+            <h5>Please log in in order to view and post comments.</h5>
         </NotAuthorized>
     </AuthorizeView>
 }

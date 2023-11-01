@@ -40,7 +40,9 @@
 
         try
         {
-            await userService.RegisterAsync(new UserCreationDto(username, password, email));
+            UserCreationDto dto = new UserCreationDto(username, password, email);
+            await userService.RegisterAsync(dto);
+            await LoginAsync();
             username = "";
             password = "";
             email = "";
@@ -54,6 +56,19 @@
             Console.WriteLine(e);
             resultMsg = e.Message;
             color = "red";
+        }
+    }
+
+    private async Task LoginAsync()
+    {
+        try
+        {
+            await userService.LoginAsync(username, password);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = $"Error: {e.Message}";
         }
     }
 

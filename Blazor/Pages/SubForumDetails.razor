@@ -5,10 +5,8 @@
 @inject ISubForumService subForumService;
 @inject IPostService postService;
 @inject NavigationManager navMgr
-<h3>SubForumDetails</h3>
 
 <div>
-    <button @onclick="LoadPosts">Load</button>
     <AuthorizeView>
         <Authorized>
         <button @onclick="@(() => navMgr.NavigateTo($"/PostCreation/{SubId}"))">Create a Post!</button>
@@ -19,7 +17,7 @@
 @if (subForum != null)
 {
     <h1>
-        <strong>r/@subForum.Title</strong>
+        <strong>@subForum.Title</strong>
     </h1>
     <p>
         u/@subForum.Owner.UserName
@@ -55,7 +53,7 @@ else
             <tr>
                 <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
                     <h5>@item.Title</h5>
-                    <p>@item.Owner.UserName</p>
+                    <p>u/@item.Owner.UserName</p>
                     <p>@item.Content</p>
                 </td>
             </tr>

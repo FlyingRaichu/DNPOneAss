@@ -4,16 +4,25 @@
 @inject IUserService userService;
 @inject NavigationService NavigationService
 
-
-<AuthorizeView>
-    <Authorized>
-        <button @onclick="Logout">Log out</button>
-    </Authorized>
-    <NotAuthorized>
-        <button @onclick="Login">Login</button>
-    </NotAuthorized>
-</AuthorizeView>
-
+<span class="login-container">
+        <AuthorizeView>
+            <Authorized>
+                
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" @onclick="Logout">
+                        <span class="oi oi-account-logout" aria-hidden="true"></span> Log out
+                    </NavLink>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" @onclick="Login">
+                        <span class="oi oi-account-logout" aria-hidden="true"></span> Login
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+</span>
 
 @code {
 

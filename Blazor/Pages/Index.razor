@@ -1,5 +1,87 @@
 ﻿@page "/"
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@using HttpClients.Implementations
+@using System.Security.Claims
+@using Blazor.Auth
+@inject IPostService postService;
+@inject NavigationManager navMgr
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home Page</PageTitle>
+<AuthorizeView>
+    <Authorized>
+        <h1>Welcome, @context.User.FindFirst(ClaimTypes.Name)?.Value</h1>
+        <br/>
+        <h2>Your posts</h2><br/>
+        @if (posts == null)
+        {
+        }
+        else if (!posts.Any())
+        {
+            <p>No Posts to display</p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                <tr>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in posts)
+                {
+                    <tr>
+                        <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
+                            @item.Title
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <h1>Home page</h1>
+        <br/><br/><br/>
+        <p>Please log in to view your posts.</p>
+    </NotAuthorized>
+</AuthorizeView>
 
-<h1>Home page</h1>
+
+@code {
+    private IEnumerable<Post>? posts;
+
+    private string msg = "";
+
+    private async Task LoadPosts(string? name)
+    {
+        try
+        {
+
+            posts = await postService.GetAsync(null, name, null, null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+        try
+        {
+            var userIdClaim = authState.User.FindFirst(ClaimTypes.Name)?.Value;
+            Console.WriteLine(userIdClaim);
+            await LoadPosts(userIdClaim);
+        }
+        catch (Exception e)
+        {
+            await LoadPosts(null);
+        }
+    }
+
+}

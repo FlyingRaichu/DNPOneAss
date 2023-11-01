@@ -32,10 +32,10 @@ public class PostHttpClient : IPostService
         return post;
     }
 
-    public async Task<ICollection<Post>> GetAsync(string? description, int? userId,
+    public async Task<ICollection<Post>> GetAsync(string? description, string? username,
         string? titleContains, int? parentId)
     {
-        string query = ConstructQuery(description, userId, titleContains, parentId); 
+        string query = ConstructQuery(description, username, titleContains, parentId); 
         
         HttpResponseMessage response = await client.GetAsync("/posts"+query);
         string content = await response.Content.ReadAsStringAsync();
@@ -67,7 +67,7 @@ public class PostHttpClient : IPostService
         return post;
     }
 
-    private static string ConstructQuery(string? content, int? userId, string? titleContains, int? parentId)
+    private static string ConstructQuery(string? content, string? username, string? titleContains, int? parentId)
     {
         //Posts? title=This%20is%20a%20good%20q & parentSubForum=1 & owner=1 & content=L
         string temp = "";
@@ -83,10 +83,10 @@ public class PostHttpClient : IPostService
             temp += $"parentSubForum={parentId}";
         }
 
-        if (userId != null)
+        if (!string.IsNullOrEmpty(username))
         {
             temp += string.IsNullOrEmpty(temp) ? "?" : "&";
-            temp += $"owner={userId}";
+            temp += $"owner={username}";
         }
 
         if (!string.IsNullOrEmpty(content))

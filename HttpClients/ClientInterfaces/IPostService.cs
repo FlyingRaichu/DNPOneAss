@@ -8,7 +8,7 @@ public interface IPostService
     Task<Post> GetPostAsync(int postId);
     Task<ICollection<Post>> GetAsync(
         string? description, 
-        int? userId, 
+        string? username, 
         string? titleContains,
         int? parentId
     );
