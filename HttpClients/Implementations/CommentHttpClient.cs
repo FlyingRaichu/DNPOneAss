@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using Domain.DTOs;
 using Domain.Models;
@@ -70,9 +71,20 @@ public class CommentHttpClient : ICommentService
         return query;
     }
 
-    public async Task<Comment> CreateAsync(CommentCreationDto dto)
+    public async Task<Comment> CreateAsync(CommentCreationDto dto, string? token)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/comments", dto);
+        string jsonDto = JsonSerializer.Serialize(dto);
+        StringContent requestContent = new StringContent(jsonDto, Encoding.UTF8, "application/json");
+        
+        var request = new HttpRequestMessage(HttpMethod.Post, "/comments");
+        request.Content = requestContent;
+
+        if (!string.IsNullOrEmpty(token))
+        {
+         request.Headers.Add("Authorization", "Bearer " + token);   
+        }
+        
+        HttpResponseMessage response = await client.SendAsync(request);
         string result = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {

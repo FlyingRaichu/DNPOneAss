@@ -78,10 +78,12 @@ public class CommentLogic: ICommentLogic
         User userToUse = user ?? existing.Owner;
         Post postToUse = post ?? existing.Parent;
         string contentToUse = dto.Content ?? existing.Content;
+        int upvotes = dto.Upvotes ?? existing.Upvotes;
 
         Comment update = new Comment(userToUse, postToUse, contentToUse)
         {
-            Id = existing.Id
+            Id = existing.Id,
+            Upvotes = upvotes
         };
         
         ValidateComment(update);

@@ -110,7 +110,7 @@ else
         try
         {
             CommentCreationDto dto = new CommentCreationDto(ownerId, postId, message);
-            Comment comment = await commentService.CreateAsync(dto);
+            Comment comment = await commentService.CreateAsync(dto, UserHttpClient.Jwt);
             message = "";
             resultMsg = "Message successfully posted";
             comments = comments.Append(comment);
