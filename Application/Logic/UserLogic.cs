@@ -3,7 +3,6 @@ using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
-using FileData.DAOs;
 
 namespace Application.Logic;
 
@@ -28,6 +27,7 @@ public class UserLogic : IUserLogic
 
         ValidateUser(dto);
         User userToCreate = new User(dto.UserName, dto.Password, dto.Email);
+        Console.WriteLine($"#### {userToCreate.CakeDay}");
         User created = await userDao.CreateAsync(userToCreate);
 
         return created;

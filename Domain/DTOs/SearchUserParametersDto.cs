@@ -1,4 +1,4 @@
-namespace FileData.DAOs;
+namespace Domain.DTOs;
 
 //searching user only by username
 public class SearchUserParametersDto

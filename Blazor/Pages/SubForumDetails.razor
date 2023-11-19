@@ -4,6 +4,7 @@
 @using Domain.Models
 @inject ISubForumService subForumService;
 @inject IPostService postService;
+@inject IUserService userService;
 @inject NavigationManager navMgr
 
 <div>
@@ -20,7 +21,7 @@
         <strong>@subForum.Title</strong>
     </h1>
     <p>
-        u/@subForum.Owner.UserName
+        @* u/@(subForum.Owner != null ? subForum.Owner.UserName : "Unknown User") *@
     </p>
     <br>
     
@@ -53,7 +54,7 @@ else
             <tr>
                 <td @onclick="@(() => navMgr.NavigateTo($"/PostDetails/{@item.Id}"))">
                     <h5>@item.Title</h5>
-                    <p>u/@item.Owner.UserName</p>
+                    @* <p>u/@item.Owner.UserName</p> *@
                     <p>@item.Content</p>
                 </td>
             </tr>

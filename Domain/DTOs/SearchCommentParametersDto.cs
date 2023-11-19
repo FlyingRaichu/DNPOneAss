@@ -1,5 +1,3 @@
-using Domain.Models;
-
 namespace Domain.DTOs;
 
 public class SearchCommentParametersDto

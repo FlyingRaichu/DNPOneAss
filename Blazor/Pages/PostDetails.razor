@@ -81,7 +81,7 @@ else
 @code {
 
     [Parameter]
-    public int postId { get; set; }
+    public int PostId { get; set; }
 
     private string resultMsg = "";
     private IEnumerable<Comment>? comments;
@@ -97,14 +97,14 @@ else
 
     private async Task LoadPost()
     {
-        post = await postService.GetPostAsync(postId);
+        post = await postService.GetPostAsync(PostId);
     }
 
     private async Task LoadComments()
     {
         try
         {
-            comments = await commentService.GetAsync(null, postId, null, null, UserHttpClient.Jwt);
+            comments = await commentService.GetAsync(null, PostId, null, null, UserHttpClient.Jwt);
         }
         catch (Exception e)
         {
@@ -119,7 +119,7 @@ else
         int ownerId = int.Parse(id);
         try
         {
-            CommentCreationDto dto = new CommentCreationDto(ownerId, postId, message);
+            CommentCreationDto dto = new CommentCreationDto(ownerId, PostId, message);
             Comment comment = await commentService.CreateAsync(dto, UserHttpClient.Jwt);
             message = "";
             resultMsg = "Message successfully posted";
